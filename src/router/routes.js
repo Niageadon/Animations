@@ -1,6 +1,7 @@
 
 const routes = [
-  { path: '/Authentication', component: () => import('pages/system/authentication.vue') }
+  { path: '/Authentication', component: () => import('pages/system/authentication.vue') },
+  { path: '/', component: () => import('pages/CSSAnimation/CardFlip/index.vue') }
 
 ]
 

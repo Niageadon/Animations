@@ -19,7 +19,21 @@
             label="CSS animations"
             caption="some boba"
           >
-
+            <q-expansion-item
+              :header-inset-level="1"
+              expand-separator
+              label="Card flip"
+              caption="some boba"
+            >
+              <q-list dense >
+                <!--input links here-->
+                <q-item to="/Authentication" clickable v-ripple>
+                  <q-item-section style="text-align: center">
+                    Item
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-expansion-item>
           </q-expansion-item>
 
           <!-------js-->
