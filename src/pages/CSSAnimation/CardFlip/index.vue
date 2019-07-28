@@ -6,12 +6,10 @@
 
 <script>
 import ex1 from './example/ex1.vue'
-// import ex2 from './../../../layouts/CodeTabs'
 export default {
   name: 'index',
   components: {
     ex1
-    // ex2
   },
   data () {
     return {

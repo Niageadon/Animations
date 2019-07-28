@@ -34,21 +34,20 @@ export default {
   },
   data () {
     return {
-      uHTML: '    <div class="row">\n' +
-          '            <div class="card">\n' +
-          '               <div class="front"></div>\n' +
-          '            <div class="back"></div>\n' +
+      uHTML: '    <div>\n' +
+          '             <div class="card">\n' +
+          '                 <div class="front"></div>\n' +
+          '             <div class="back"></div>\n' +
           '          </div>',
       uCSS: ' .front{\n' +
           '    height: 100%;\n' +
           '    width: 100%;\n' +
-          '    background-image: url(https://99px.ru/sstorage/56/2013/12/image_563012130153328414049.jpg);\n' +
           '    background-position: 50% 50%;\n' +
           '    background-size: cover;\n' +
           '    position: absolute;\n' +
           '    top: 0;\n' +
           '    left: 0;\n' +
-          '    background-color: #000000;\n' +
+          '    background-color: aqua;\n' +
           '    backface-visibility: hidden;\n' +
           '    transform: rotateX(0deg);\n' +
           '    transition: 0.5s;\n' +

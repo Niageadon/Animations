@@ -3,7 +3,7 @@
       <q-tabs
         v-model="tab"
         no-caps
-        class="shadow-2"
+        class="shadow-2 bg-grey-1"
       >
         <q-tab v-bind:class="{'bg-grey-5':(tab === 'HTML')}" name="HTML" label="HTML" />
         <q-tab v-bind:class="{'bg-grey-5':(tab === 'CSS')}" name="CSS" label="CSS" />
@@ -14,7 +14,7 @@
 
       <q-tab-panels   v-model="tab" animated>
         <q-tab-panel style="white-space: pre-wrap" name="HTML">
-          <div v-html="true" class="text-h6"></div>
+          <div class="text-h6"></div>
           {{uHTML}}
         </q-tab-panel>
 
