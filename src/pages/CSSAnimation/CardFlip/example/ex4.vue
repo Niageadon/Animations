@@ -6,7 +6,7 @@
           <q-space/>
         </q-card-actions>
         <div class="row">
-          <div class="card col-3">
+          <div class="card col-2 q-mx-lg">
             <div class="front">front</div>
             <div class="back">back</div>
           </div>
@@ -101,8 +101,9 @@ export default {
     text-align: center;
   }
   .card{
-    width: 250px;
-    height: 430px;
+    min-width: 25px;
+    min-height: 40px;
+    max-height: 300px;
     transform-style: preserve-3d;
     perspective: 700px;
   }

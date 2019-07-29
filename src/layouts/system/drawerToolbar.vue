@@ -12,7 +12,7 @@
       <!-----------------------drawer------------------------->
       <q-drawer v-model="drawer" side="left" overlay bordered>
         <q-list bordered class="rounded-borders">
-          <!--------css------->
+          <!-----------------------------------------css------------------------------------------------------------->
           <q-expansion-item
             expand-separator
             icon="donut_small"
@@ -27,7 +27,7 @@
             >
               <q-list dense >
                 <!--input links here-->
-                <q-item to="/Authentication" clickable v-ripple>
+                <q-item to="/CSS/flip" clickable v-ripple>
                   <q-item-section style="text-align: center">
                     Item
                   </q-item-section>
@@ -36,14 +36,31 @@
             </q-expansion-item>
           </q-expansion-item>
 
-          <!-------js-->
+          <!----------------------------------------js---------------------------------------------------------------->
+          <q-expansion-item
+          expand-separator
+          icon="brush"
+          label="JS animations"
+          caption="some boba"
+        >
+
+        </q-expansion-item>
+
+          <!------------------------------------------css properties----------------------------------------------------->
           <q-expansion-item
             expand-separator
-            icon="brush"
-            label="JS animations"
+            icon="android"
+            label="CSS properties"
             caption="some boba"
           >
-
+            <q-list dense >
+              <!--input links here-->
+              <q-item to="/CSS-property/transform-origin" clickable v-ripple>
+                <q-item-section style="text-align: center">
+                  transform-origin
+                </q-item-section>
+              </q-item>
+            </q-list>
           </q-expansion-item>
         </q-list>
       </q-drawer>

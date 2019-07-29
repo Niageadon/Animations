@@ -2,7 +2,7 @@
     <div>
       <q-card class="q-pa-lg bg-grey-2">
         <q-card-actions class="row">
-          <h4 class="q-mt-none q-mb-lg col-3">Diagonal flip left</h4>
+          <h4 class="q-mt-none q-mb-lg col-3">Diagonal flip right </h4>
           <q-space/>
         </q-card-actions>
         <div class="row">
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+// TODO: чот не работает
 import tabs from '../../../../layouts/CodeTabs'
 export default {
   name: 'ex2',
@@ -37,7 +38,40 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: '',
+      uCSS: '  .front{\n' +
+        '    height: 100%;\n' +
+        '    width: 100%;\n' +
+        '    position: absolute;\n' +
+        '    background-color: aqua;\n' +
+        '    backface-visibility: hidden;\n' +
+        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
+        '    transition: 0.8s;\n' +
+        '    text-align: center;\n' +
+        '  }\n' +
+        '  .back{\n' +
+        '    height: 100%;\n' +
+        '    width: 100%;\n' +
+        '    position: absolute;\n' +
+        '    background-color: #000000;\n' +
+        '    backface-visibility: hidden;\n' +
+        '    transform: rotate3d(1, 1, 0, 180deg);\n' +
+        '    transition: 0.8s;\n' +
+        '    color: #ffffff;\n' +
+        '    text-align: center;\n' +
+        '  }\n' +
+        '  .card{\n' +
+        '    position: relative;\n' +
+        '    width: 250px;\n' +
+        '    height: 430px;\n' +
+        '    transform-style: preserve-3d;\n' +
+        '    z-index:2;\n' +
+        '  }\n' +
+        '  .card:hover .front {\n' +
+        '    transform: rotate3d(1, 1, 0, 180deg);\n' +
+        '  }\n' +
+        '  .card:hover .back {\n' +
+        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
+        '  }\n',
       uJS: '',
       uDescription: ''
     }
@@ -52,7 +86,7 @@ export default {
     position: absolute;
     background-color: aqua;
     backface-visibility: hidden;
-    transform: rotate3d(1, 0, 0, 0deg);
+    transform: rotate3d(1, 1, 0, -0deg);
     transition: 0.8s;
     text-align: center;
   }
@@ -62,7 +96,7 @@ export default {
     position: absolute;
     background-color: #000000;
     backface-visibility: hidden;
-    transform: rotate3d(1, 1, 0, -180deg);
+    transform: rotate3d(1, 1, 0, 0.5turn);
     transition: 0.8s;
     color: #ffffff;
     text-align: center;
@@ -71,14 +105,14 @@ export default {
     position: relative;
     min-width: 25px;
     min-height: 40px;
-    max-height: 400px;
+    max-height: 300px;
     transform-style: preserve-3d;
     z-index:2;
   }
   .card:hover .front {
-    transform: rotate3d(1, 1, 0, -180deg);
+    transform: rotate3d(1, 1, 0, 0.5turn);
   }
   .card:hover .back {
-    transform: rotate3d(1, 0, 0, 0deg);
+    transform: rotate3d(1, 1, 0, -0turn);
   }
 </style>

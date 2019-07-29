@@ -1,8 +1,9 @@
 
 const routes = [
   { path: '/Authentication', component: () => import('pages/system/authentication.vue') },
-  { path: '/', component: () => import('pages/CSSAnimation/CardFlip/index.vue') }
-
+  { path: '/CSS/flip', component: () => import('pages/CSSAnimation/CardFlip/index.vue') },
+  // CSS property
+  { path: '/CSS-property/transform-origin', component: () => import('pages/CSSProperties/transform-origin.vue') }
 ]
 
 // Always leave this as last one
