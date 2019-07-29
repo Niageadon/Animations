@@ -3,12 +3,12 @@
       <q-tabs
         v-model="tab"
         no-caps
-        class="shadow-2 bg-grey-1"
+        class="shadow-2  bg-grey-5"
       >
-        <q-tab v-bind:class="{'bg-grey-5':(tab === 'HTML')}" name="HTML" label="HTML" />
-        <q-tab v-bind:class="{'bg-grey-5':(tab === 'CSS')}" name="CSS" label="CSS" />
-        <q-tab v-bind:class="{'bg-grey-5':(tab === 'JS')}" name="JS" label="JS" />
-        <q-tab v-bind:class="{'bg-grey-5':(tab === 'Description')}" name="Description" label="Description" />
+        <q-tab v-bind:class="{'bg-white':(tab === 'HTML')}" name="HTML" label="HTML" />
+        <q-tab v-bind:class="{'bg-white':(tab === 'CSS')}" name="CSS" label="CSS" />
+        <q-tab v-bind:class="{'bg-white':(tab === 'JS')}" name="JS" label="JS" />
+        <q-tab v-bind:class="{'bg-white':(tab === 'Description')}" name="Description" label="Description" />
       </q-tabs>
       <q-separator />
 

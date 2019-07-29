@@ -2,7 +2,7 @@
     <div>
       <q-card class="q-pa-lg bg-grey-2">
         <q-card-actions class="row">
-          <h4 class="q-mt-none q-mb-lg col-3">Flip down</h4>
+          <h4 class="q-mt-none q-mb-lg col-3">Diagonal flip right</h4>
           <q-space/>
         </q-card-actions>
         <div class="row">
@@ -19,7 +19,6 @@
             class=" col-9">
           </tabs>
         </div>
-
       </q-card>
     </div>
 </template>
@@ -27,7 +26,7 @@
 <script>
 import tabs from '../../../../layouts/CodeTabs'
 export default {
-  name: 'ex1',
+  name: 'ex2',
   components: {
     tabs
   },
@@ -38,15 +37,14 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: ' .front{\n' +
+      uCSS: '  .front{\n' +
         '    height: 100%;\n' +
         '    width: 100%;\n' +
-        '    background-size: cover;\n' +
         '    position: absolute;\n' +
         '    background-color: aqua;\n' +
         '    backface-visibility: hidden;\n' +
-        '    transform: rotateX(0deg);\n' +
-        '    transition: 0.5s;\n' +
+        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
+        '    transition: 0.8s;\n' +
         '    text-align: center;\n' +
         '  }\n' +
         '  .back{\n' +
@@ -55,23 +53,24 @@ export default {
         '    position: absolute;\n' +
         '    background-color: #000000;\n' +
         '    backface-visibility: hidden;\n' +
-        '    transform: rotateX(180deg);\n' +
-        '    transition: 0.5s;\n' +
+        '    transform: rotate3d(1, 1, 0, 180deg);\n' +
+        '    transition: 0.8s;\n' +
         '    color: #ffffff;\n' +
         '    text-align: center;\n' +
         '  }\n' +
         '  .card{\n' +
+        '    position: relative;\n' +
         '    width: 250px;\n' +
         '    height: 430px;\n' +
         '    transform-style: preserve-3d;\n' +
-        '    perspective: 700px;\n' +
+        '    z-index:2;\n' +
         '  }\n' +
         '  .card:hover .front {\n' +
-        '  transform: rotateX(-180deg);\n' +
+        '    transform: rotate3d(1, 1, 0, 180deg);\n' +
         '  }\n' +
         '  .card:hover .back {\n' +
-        '    transform: rotateX(0deg);\n' +
-        '  }',
+        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
+        '  }\n',
       uJS: '',
       uDescription: ''
     }
@@ -86,8 +85,8 @@ export default {
     position: absolute;
     background-color: aqua;
     backface-visibility: hidden;
-    transform: rotateX(0deg);
-    transition: 0.5s;
+    transform: rotate3d(1, 0, 0, 0deg);
+    transition: 0.8s;
     text-align: center;
   }
   .back{
@@ -96,21 +95,22 @@ export default {
     position: absolute;
     background-color: #000000;
     backface-visibility: hidden;
-    transform: rotateX(180deg);
-    transition: 0.5s;
+    transform: rotate3d(1, 1, 0, 180deg);
+    transition: 0.8s;
     color: #ffffff;
     text-align: center;
   }
   .card{
+    position: relative;
     width: 250px;
     height: 430px;
     transform-style: preserve-3d;
-    perspective: 700px;
+    z-index:2;
   }
   .card:hover .front {
-  transform: rotateX(-180deg);
+    transform: rotate3d(1, 1, 0, 180deg);
   }
   .card:hover .back {
-    transform: rotateX(0deg);
+    transform: rotate3d(1, 0, 0, 0deg);
   }
 </style>

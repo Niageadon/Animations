@@ -2,7 +2,7 @@
     <div>
       <q-card class="q-pa-lg bg-grey-2">
         <q-card-actions class="row">
-          <h4 class="q-mt-none q-mb-lg col-3">Flip down</h4>
+          <h4 class="q-mt-none q-mb-lg col-3">Flip left</h4>
           <q-space/>
         </q-card-actions>
         <div class="row">
@@ -19,7 +19,6 @@
             class=" col-9">
           </tabs>
         </div>
-
       </q-card>
     </div>
 </template>
@@ -27,7 +26,7 @@
 <script>
 import tabs from '../../../../layouts/CodeTabs'
 export default {
-  name: 'ex1',
+  name: 'ex2',
   components: {
     tabs
   },
@@ -38,7 +37,7 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: ' .front{\n' +
+      uCSS: '  .front{\n' +
         '    height: 100%;\n' +
         '    width: 100%;\n' +
         '    background-size: cover;\n' +
@@ -55,7 +54,7 @@ export default {
         '    position: absolute;\n' +
         '    background-color: #000000;\n' +
         '    backface-visibility: hidden;\n' +
-        '    transform: rotateX(180deg);\n' +
+        '    transform: rotateY(180deg);\n' +
         '    transition: 0.5s;\n' +
         '    color: #ffffff;\n' +
         '    text-align: center;\n' +
@@ -67,10 +66,10 @@ export default {
         '    perspective: 700px;\n' +
         '  }\n' +
         '  .card:hover .front {\n' +
-        '  transform: rotateX(-180deg);\n' +
+        '  transform: rotateY(-180deg);\n' +
         '  }\n' +
         '  .card:hover .back {\n' +
-        '    transform: rotateX(0deg);\n' +
+        '    transform: rotateY(0deg);\n' +
         '  }',
       uJS: '',
       uDescription: ''
@@ -96,7 +95,7 @@ export default {
     position: absolute;
     background-color: #000000;
     backface-visibility: hidden;
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
     transition: 0.5s;
     color: #ffffff;
     text-align: center;
@@ -108,9 +107,9 @@ export default {
     perspective: 700px;
   }
   .card:hover .front {
-  transform: rotateX(-180deg);
+  transform: rotateY(-180deg);
   }
   .card:hover .back {
-    transform: rotateX(0deg);
+    transform: rotateY(0deg);
   }
 </style>
