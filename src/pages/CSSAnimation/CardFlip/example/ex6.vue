@@ -38,14 +38,14 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: '  .front{\n' +
+      uCSS: '.front{\n' +
         '    height: 100%;\n' +
         '    width: 100%;\n' +
         '    position: absolute;\n' +
         '    background-color: aqua;\n' +
         '    backface-visibility: hidden;\n' +
-        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
-        '    transition: 0.8s;\n' +
+        '    transform: rotate3d(1, 0, 0, 0turn);\n' +
+        '    transition: 1s;\n' +
         '    text-align: center;\n' +
         '  }\n' +
         '  .back{\n' +
@@ -54,24 +54,26 @@ export default {
         '    position: absolute;\n' +
         '    background-color: #000000;\n' +
         '    backface-visibility: hidden;\n' +
-        '    transform: rotate3d(1, 1, 0, 180deg);\n' +
-        '    transition: 0.8s;\n' +
+        '    transform: rotate3d(1, 1, 0, -180deg);\n' +
+        '    transition: 1s;\n' +
         '    color: #ffffff;\n' +
         '    text-align: center;\n' +
         '  }\n' +
         '  .card{\n' +
         '    position: relative;\n' +
-        '    width: 250px;\n' +
-        '    height: 430px;\n' +
+        '    min-width: 25px;\n' +
+        '    min-height: 40px;\n' +
+        '    max-height: 200px;\n' +
         '    transform-style: preserve-3d;\n' +
         '    z-index:2;\n' +
+        '    perspective: 700px;\n' +
         '  }\n' +
         '  .card:hover .front {\n' +
-        '    transform: rotate3d(1, 1, 0, 180deg);\n' +
+        '    transform: rotate3d(1, 1, 0, 0.5turn);\n' +
         '  }\n' +
         '  .card:hover .back {\n' +
-        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
-        '  }\n',
+        '    transform: rotate3d(1, 0, 0, 0turn);\n' +
+        '  }',
       uJS: '',
       uDescription: ''
     }
@@ -86,8 +88,8 @@ export default {
     position: absolute;
     background-color: aqua;
     backface-visibility: hidden;
-    transform: rotate3d(1, 1, 0, -0deg);
-    transition: 0.8s;
+    transform: rotate3d(1, 0, 0, 0turn);
+    transition: 1s;
     text-align: center;
   }
   .back{
@@ -96,8 +98,8 @@ export default {
     position: absolute;
     background-color: #000000;
     backface-visibility: hidden;
-    transform: rotate3d(1, 1, 0, 0.5turn);
-    transition: 0.8s;
+    transform: rotate3d(1, 1, 0, -180deg);
+    transition: 1s;
     color: #ffffff;
     text-align: center;
   }
@@ -105,14 +107,15 @@ export default {
     position: relative;
     min-width: 25px;
     min-height: 40px;
-    max-height: 300px;
+    max-height: 200px;
     transform-style: preserve-3d;
     z-index:2;
+    perspective: 700px;
   }
   .card:hover .front {
     transform: rotate3d(1, 1, 0, 0.5turn);
   }
   .card:hover .back {
-    transform: rotate3d(1, 1, 0, -0turn);
+    transform: rotate3d(1, 0, 0, 0turn);
   }
 </style>

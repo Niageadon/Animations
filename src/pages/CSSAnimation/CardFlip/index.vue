@@ -6,7 +6,6 @@
    <ex4 class="q-mt-lg col-10"></ex4>
    <ex5 class="q-mt-lg col-10"></ex5>
    <ex6 class="q-mt-lg col-10"></ex6>
-   <h2>    transform-origin: center;</h2>
   </div>
 </template>
 

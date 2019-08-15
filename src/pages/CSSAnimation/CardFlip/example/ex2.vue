@@ -103,7 +103,7 @@ export default {
   .card{
     min-width: 25px;
     min-height: 40px;
-    max-height: 300px;
+    max-height: 200px;
     transform-style: preserve-3d;
     perspective: 700px;
   }

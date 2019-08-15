@@ -37,7 +37,42 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: '',
+      uCSS: '.front{\n' +
+        '    height: 100%;\n' +
+        '    width: 100%;\n' +
+        '    position: absolute;\n' +
+        '    background-color: aqua;\n' +
+        '    backface-visibility: hidden;\n' +
+        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
+        '    transition: 0.8s;\n' +
+        '    text-align: center;\n' +
+        '  }\n' +
+        '  .back{\n' +
+        '    height: 100%;\n' +
+        '    width: 100%;\n' +
+        '    position: absolute;\n' +
+        '    background-color: #000000;\n' +
+        '    backface-visibility: hidden;\n' +
+        '    transform: rotate3d(1, 1, 0, -180deg);\n' +
+        '    transition: 0.8s;\n' +
+        '    color: #ffffff;\n' +
+        '    text-align: center;\n' +
+        '  }\n' +
+        '  .card{\n' +
+        '    position: relative;\n' +
+        '    min-width: 25px;\n' +
+        '    min-height: 40px;\n' +
+        '    max-height: 200px;\n' +
+        '    transform-style: preserve-3d;\n' +
+        '    z-index:2;\n' +
+        '    perspective: 700px;\n' +
+        '  }\n' +
+        '  .card:hover .front {\n' +
+        '    transform: rotate3d(-1, -1, 0, -0.5turn);\n' +
+        '  }\n' +
+        '  .card:hover .back {\n' +
+        '    transform: rotate3d(1, 0, 0, 0turn);\n' +
+        '  }',
       uJS: '',
       uDescription: ''
     }
@@ -71,14 +106,15 @@ export default {
     position: relative;
     min-width: 25px;
     min-height: 40px;
-    max-height: 400px;
+    max-height: 200px;
     transform-style: preserve-3d;
     z-index:2;
+    perspective: 700px;
   }
   .card:hover .front {
-    transform: rotate3d(1, 1, 0, -180deg);
+    transform: rotate3d(-1, -1, 0, -0.5turn);
   }
   .card:hover .back {
-    transform: rotate3d(1, 0, 0, 0deg);
+    transform: rotate3d(1, 0, 0, 0turn);
   }
 </style>
