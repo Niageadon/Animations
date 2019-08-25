@@ -1,22 +1,23 @@
+<!-- TODO: добавить в табы корректный код-->
 <template>
     <div>
-      <q-card class="q-pa-lg bg-grey-2">
-        <q-card-actions class="row">
-          <h4 class="q-mt-none q-mb-lg col-3">Flip down</h4>
-          <q-space/>
+      <q-card  class="q-py-lg bg-grey-2 ">
+        <q-card-actions :align="'center'" class="">
+          <h4 class="q-mt-none q-mb-lg">Flip down</h4>
         </q-card-actions>
-        <div class="row">
-          <div class="card col-2 q-mx-lg">
+        <!------------------------------>
+        <div class="row justify-center">
+          <div class="card col-md-2 col-xs-12 q-mx-lg">
             <div class="front">front</div>
             <div class="back">back</div>
           </div>
-          <q-space></q-space>
+          <!------------------------------>
           <tabs
             v-bind:HTML="uHTML"
             v-bind:CSS="uCSS"
             v-bind:JS="uJS"
             v-bind:Description="uDescription"
-            class=" col-9">
+            class="col-md-9 col-xs-12">
           </tabs>
         </div>
 
@@ -38,80 +39,46 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: ' .front{\n' +
-        '    height: 100%;\n' +
-        '    width: 100%;\n' +
-        '    background-size: cover;\n' +
-        '    position: absolute;\n' +
-        '    background-color: aqua;\n' +
-        '    backface-visibility: hidden;\n' +
-        '    transform: rotateX(0deg);\n' +
-        '    transition: 0.5s;\n' +
-        '    text-align: center;\n' +
-        '  }\n' +
-        '  .back{\n' +
-        '    height: 100%;\n' +
-        '    width: 100%;\n' +
-        '    position: absolute;\n' +
-        '    background-color: #000000;\n' +
-        '    backface-visibility: hidden;\n' +
-        '    transform: rotateX(180deg);\n' +
-        '    transition: 0.5s;\n' +
-        '    color: #ffffff;\n' +
-        '    text-align: center;\n' +
-        '  }\n' +
-        '  .card{\n' +
-        '    width: 250px;\n' +
-        '    height: 430px;\n' +
-        '    transform-style: preserve-3d;\n' +
-        '    perspective: 700px;\n' +
-        '  }\n' +
-        '  .card:hover .front {\n' +
-        '  transform: rotateX(-180deg);\n' +
-        '  }\n' +
-        '  .card:hover .back {\n' +
-        '    transform: rotateX(0deg);\n' +
-        '  }',
-      uJS: '',
+      uCSS: '',
+      uJS: '@import \'../style.scss\';' +
+      '.front{' +
+      '@extend %card-front;' +
+      '}' +
+      '.back{' +
+      '@extend %card-back;' +
+      'transform: rotateX(180deg);' +
+      '}' +
+      '.card{' +
+      '@extend %card-body;' +
+      '&:hover .front{' +
+      'transform: rotateX(-180deg);' +
+      '}' +
+      '&:hover .back{' +
+      'transform: rotateX(0deg);' +
+      '}' +
+      '}',
       uDescription: ''
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../style.scss';
   .front{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: aqua;
-    backface-visibility: hidden;
-    transform: rotateX(0deg);
-    transition: 0.5s;
-    text-align: center;
+    @extend %card-front;
   }
   .back{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: #000000;
-    backface-visibility: hidden;
+    @extend %card-back;
     transform: rotateX(180deg);
-    transition: 0.5s;
-    color: #ffffff;
-    text-align: center;
   }
   .card{
-    min-width: 25px;
-    min-height: 40px;
-    max-height: 200px;
-    transform-style: preserve-3d;
-    perspective: 700px;
-  }
-  .card:hover .front {
-  transform: rotateX(-180deg);
-  }
-  .card:hover .back {
+    @extend %card-body;
+    &:hover .front{
+    transform: rotateX(-180deg);
+    }
+    &:hover .back{
     transform: rotateX(0deg);
+    }
   }
 </style>

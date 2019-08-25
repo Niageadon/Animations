@@ -1,0 +1,17 @@
+'@import \'../style.scss\';'+
+'.front{'+
+'@extend %card-front;'+
+'}'+
+'.back{'+
+'@extend %card-back;'+
+'transform: rotateX(180deg);'+
+'}'+
+'.card{'+
+'@extend %card-body;'+
+'&:hover .front{'+
+'transform: rotateX(-180deg);'+
+'}'+
+'&:hover .back{'+
+'transform: rotateX(0deg);'+
+'}'+
+'}'
