@@ -1,10 +1,12 @@
+$container-bc: #2a004a;
+
 $card-width: 200px;
 $card-height: 200px;
 $card-margin: 10px;
 
-
-$card-color-front: #6C8CD5;
+$card-color-front: #ce84e1;
 $card-color-back: #FFA040;
+$card-text-pt: 15px;
 
 %card-body {
     width: $card-width;
@@ -15,6 +17,8 @@ $card-color-back: #FFA040;
     margin-top: 0;
 }
 %card-front {
+    padding-top: $card-text-pt;
+    color: black;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -24,6 +28,8 @@ $card-color-back: #FFA040;
     text-align: center;
 }
 %card-back {
+    padding-top: $card-text-pt;
+    color: black;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -31,4 +37,8 @@ $card-color-back: #FFA040;
     backface-visibility: hidden;
     transition: 0.5s;
     text-align: center;
+}
+%container{
+    background-color: $container-bc;
+    color: white;
 }

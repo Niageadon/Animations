@@ -3,7 +3,8 @@
       <q-tabs
         v-model="tab"
         no-caps
-        class="shadow-2  bg-grey-5"
+        style="background-color: #ce84e1"
+        class="shadow-2 content"
       >
         <q-tab v-bind:class="{'bg-white':(tab === 'HTML')}" name="HTML" label="HTML" />
         <q-tab v-bind:class="{'bg-white':(tab === 'CSS')}" name="CSS" label="CSS" />
@@ -12,7 +13,7 @@
       </q-tabs>
       <q-separator />
 
-      <q-tab-panels   v-model="tab" animated>
+      <q-tab-panels   v-model="tab" class="content" animated>
         <q-tab-panel style="white-space: pre-wrap" name="HTML">
           <div class="text-h6"></div>
           {{uHTML}}
@@ -55,6 +56,6 @@ export default {
 
 <style scoped>
   .content{
-    max-height: 200px;
+    color: black
   }
 </style>

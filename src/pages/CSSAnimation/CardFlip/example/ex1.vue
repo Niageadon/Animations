@@ -1,7 +1,7 @@
 <!-- TODO: добавить в табы корректный код-->
 <template>
     <div>
-      <q-card  class="q-py-lg bg-grey-2 ">
+      <q-card  class="q-py-lg container">
         <q-card-actions :align="'center'" class="">
           <h4 class="q-mt-none q-mb-lg">Flip down</h4>
         </q-card-actions>
@@ -40,23 +40,7 @@ export default {
           '         <div class="back">back</div>\n' +
           '      </div>',
       uCSS: '',
-      uJS: '@import \'../style.scss\';' +
-      '.front{' +
-      '@extend %card-front;' +
-      '}' +
-      '.back{' +
-      '@extend %card-back;' +
-      'transform: rotateX(180deg);' +
-      '}' +
-      '.card{' +
-      '@extend %card-body;' +
-      '&:hover .front{' +
-      'transform: rotateX(-180deg);' +
-      '}' +
-      '&:hover .back{' +
-      'transform: rotateX(0deg);' +
-      '}' +
-      '}',
+      uJS: '',
       uDescription: ''
     }
   }
@@ -80,5 +64,8 @@ export default {
     &:hover .back{
     transform: rotateX(0deg);
     }
+  }
+  .container{
+    @extend %container;
   }
 </style>

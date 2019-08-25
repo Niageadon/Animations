@@ -1,39 +1,43 @@
 <template>
-  <div>
-    <q-card class="q-pa-lg bg-grey-2">
-      <q-card-actions class="row">
-        <h4 class="q-mt-none q-mb-lg col-3">Title</h4>
-        <q-space/>
-      </q-card-actions>
-      <div class="row">
-        <div class="card col-3">
-          <div class="front">front</div>
-          <div class="back">back</div>
+    <div>
+      <q-card  class="q-py-lg bg-grey-2 ">
+        <q-card-actions :align="'center'" class="">
+          <h4 class="q-mt-none q-mb-lg">Flip down</h4>
+        </q-card-actions>
+        <!------------------------------>
+        <div class="row justify-center">
+          <div class="card col-md-2 col-xs-12 q-mx-lg">
+            <div class="front">front</div>
+            <div class="back">back</div>
+          </div>
+          <!------------------------------>
+          <tabs
+            v-bind:HTML="uHTML"
+            v-bind:CSS="uCSS"
+            v-bind:JS="uJS"
+            v-bind:Description="uDescription"
+            class="col-md-9 col-xs-12">
+          </tabs>
         </div>
-        <q-space></q-space>
-        <tabs
-          v-bind:HTML="uHTML"
-          v-bind:CSS="uCSS"
-          v-bind:JS="uJS"
-          v-bind:Description="uDescription"
-          class=" col-9">
-        </tabs>
-      </div>
 
-    </q-card>
-  </div>
+      </q-card>
+    </div>
 </template>
 
 <script>
 import tabs from '../../../../layouts/CodeTabs'
 export default {
-  name: 'template',
+  name: 'ex',
   components: {
     tabs
   },
   data () {
     return {
-      uHTML: '',
+      uHTML: '<div>\n' +
+          '         <div class="card">\n' +
+          '             <div class="front">front</div>\n' +
+          '         <div class="back">back</div>\n' +
+          '      </div>',
       uCSS: '',
       uJS: '',
       uDescription: ''
@@ -42,6 +46,22 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+@import '../style.scss';
+  .front{
+    @extend %card-front;
+  }
+  .back{
+    @extend %card-back;
+    transform: rotateX(180deg);
+  }
+  .card{
+    @extend %card-body;
+    &:hover .front{
+    transform: rotateX(-180deg);
+    }
+    &:hover .back{
+    transform: rotateX(0deg);
+    }
+  }
 </style>
