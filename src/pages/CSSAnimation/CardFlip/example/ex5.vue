@@ -38,7 +38,7 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: '.front{\n    @extend %card-front;\n  }\n  .back{\n    @extend %card-back;\n    transform: rotateY(180deg);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotateY(-180deg);\n    }\n    &:hover .back{\n    transform: rotateY(0deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
+      uCSS: '.front{\n    @extend %card-front;\n    transition: 1s;\n  }\n  .back{\n    @extend %card-back;\n    transition: 1s;\n    transform: rotate3d(1, 1, 0, 0.5turn);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotate3d(1, 1, 0, 0.5turn);\n    }\n    &:hover .back{\n    transform: rotate3d(1, 0, 0, 0turn);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
       uJS: '',
       uDescription: ''
     }

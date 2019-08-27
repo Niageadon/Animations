@@ -1,11 +1,11 @@
 <template>
   <div class="row justify-center">
    <ex1 class="q-mt-lg col-md-10 col-xs-12"></ex1>
-   <ex2 class="q-mt-lg col-10"></ex2>
-   <ex3 class="q-mt-lg col-md-10"></ex3>
-   <ex4 class="q-mt-lg col-10"></ex4>
-   <ex5 class="q-mt-lg col-10"></ex5>
-   <ex6 class="q-mt-lg col-10"></ex6>
+   <ex2 class="q-mt-lg col-md-10 col-xs-12"></ex2>
+   <ex3 class="q-mt-lg col-md-10 col-xs-12"></ex3>
+   <ex4 class="q-mt-lg col-md-10 col-xs-12"></ex4>
+   <ex5 class="q-mt-lg col-md-10 col-xs-12"></ex5>
+   <ex6 class="q-mt-lg col-md-10 col-xs-12"></ex6>
   </div>
 </template>
 
