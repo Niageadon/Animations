@@ -1,24 +1,25 @@
 <template>
     <div>
-      <q-card class="q-pa-lg bg-grey-2">
-        <q-card-actions class="row">
-          <h4 class="q-mt-none q-mb-lg col-3">Diagonal flip left</h4>
-          <q-space/>
+      <q-card  class="q-py-lg container">
+        <q-card-actions :align="'center'" class="">
+          <h4 class="q-mt-none q-mb-lg">Diagonal flip left</h4>
         </q-card-actions>
-        <div class="row">
-          <div class="card col-2 q-mx-lg">
+        <!------------------------------>
+        <div class="row justify-center">
+          <div class="card col-md-2 col-xs-12 q-mx-lg">
             <div class="front">front</div>
             <div class="back">back</div>
           </div>
-          <q-space></q-space>
+          <!------------------------------>
           <tabs
             v-bind:HTML="uHTML"
             v-bind:CSS="uCSS"
             v-bind:JS="uJS"
             v-bind:Description="uDescription"
-            class=" col-9">
+            class="col-md-9 col-xs-12">
           </tabs>
         </div>
+
       </q-card>
     </div>
 </template>
@@ -26,7 +27,7 @@
 <script>
 import tabs from '../../../../layouts/CodeTabs'
 export default {
-  name: 'ex2',
+  name: 'ex1',
   components: {
     tabs
   },
@@ -37,42 +38,7 @@ export default {
           '             <div class="front">front</div>\n' +
           '         <div class="back">back</div>\n' +
           '      </div>',
-      uCSS: '.front{\n' +
-        '    height: 100%;\n' +
-        '    width: 100%;\n' +
-        '    position: absolute;\n' +
-        '    background-color: aqua;\n' +
-        '    backface-visibility: hidden;\n' +
-        '    transform: rotate3d(1, 0, 0, 0deg);\n' +
-        '    transition: 0.8s;\n' +
-        '    text-align: center;\n' +
-        '  }\n' +
-        '  .back{\n' +
-        '    height: 100%;\n' +
-        '    width: 100%;\n' +
-        '    position: absolute;\n' +
-        '    background-color: #000000;\n' +
-        '    backface-visibility: hidden;\n' +
-        '    transform: rotate3d(1, 1, 0, -180deg);\n' +
-        '    transition: 0.8s;\n' +
-        '    color: #ffffff;\n' +
-        '    text-align: center;\n' +
-        '  }\n' +
-        '  .card{\n' +
-        '    position: relative;\n' +
-        '    min-width: 25px;\n' +
-        '    min-height: 40px;\n' +
-        '    max-height: 200px;\n' +
-        '    transform-style: preserve-3d;\n' +
-        '    z-index:2;\n' +
-        '    perspective: 700px;\n' +
-        '  }\n' +
-        '  .card:hover .front {\n' +
-        '    transform: rotate3d(-1, -1, 0, -0.5turn);\n' +
-        '  }\n' +
-        '  .card:hover .back {\n' +
-        '    transform: rotate3d(1, 0, 0, 0turn);\n' +
-        '  }',
+      uCSS: '.front{\n    @extend %card-front;\n  }\n  .back{\n    @extend %card-back;\n    transform: rotateY(180deg);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotateY(-180deg);\n    }\n    &:hover .back{\n    transform: rotateY(0deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
       uJS: '',
       uDescription: ''
     }
@@ -80,41 +46,27 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../style.scss';
   .front{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: aqua;
-    backface-visibility: hidden;
-    transform: rotate3d(1, 0, 0, 0deg);
-    transition: 0.8s;
-    text-align: center;
+    @extend %card-front;
+    transition: 1s;
   }
   .back{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: #000000;
-    backface-visibility: hidden;
-    transform: rotate3d(1, 1, 0, -180deg);
-    transition: 0.8s;
-    color: #ffffff;
-    text-align: center;
+    @extend %card-back;
+    transition: 1s;
+    transform: rotate3d(1, 1, 0, 0.5turn);
   }
   .card{
-    position: relative;
-    min-width: 25px;
-    min-height: 40px;
-    max-height: 200px;
-    transform-style: preserve-3d;
-    z-index:2;
-    perspective: 700px;
-  }
-  .card:hover .front {
-    transform: rotate3d(-1, -1, 0, -0.5turn);
-  }
-  .card:hover .back {
+    @extend %card-body;
+    &:hover .front{
+    transform: rotate3d(1, 1, 0, 0.5turn);
+    }
+    &:hover .back{
     transform: rotate3d(1, 0, 0, 0turn);
+    }
+  }
+  .container{
+    @extend %container;
   }
 </style>
