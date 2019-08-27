@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div>
       <q-tabs
         v-model="tab"
         no-caps
@@ -13,7 +13,7 @@
       </q-tabs>
       <q-separator />
 
-      <q-tab-panels   v-model="tab" class="content" animated>
+      <q-tab-panels  v-model="tab" class="content tab" animated>
         <q-tab-panel style="white-space: pre-wrap" name="HTML">
           <div class="text-h6"></div>
           {{uHTML}}
@@ -54,8 +54,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+$tab-height: 48px;
+$tab-content-height: 200px - $tab-height;
   .content{
     color: black
+  }
+  .tab{
+    min-height: $tab-content-height;
   }
 </style>
