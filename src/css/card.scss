@@ -1,4 +1,6 @@
-$container-bc: #2a004a;
+@import "./app.scss";
+
+$container-bc: $app-toolbar-bg;
 
 $card-width: 200px;
 $card-height: 200px;

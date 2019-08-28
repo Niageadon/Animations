@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-----------------toolbar------------------------->
-      <q-header bordered class="bg-primary text-white">
+      <q-header bordered class="toolbar text-white">
         <q-toolbar>
           <q-btn dense flat round icon="menu" @click="drawer = !drawer"></q-btn>
           <q-toolbar-title>
@@ -27,9 +27,14 @@
             >
               <q-list dense >
                 <!--input links here-->
-                <q-item to="/CSS/flip" clickable v-ripple>
+                <q-item to="/CSS/card-flip" clickable v-ripple>
                   <q-item-section style="text-align: center">
-                    Item
+                    Card
+                  </q-item-section>
+                </q-item>
+                <q-item to="/CSS/cube-flip" clickable v-ripple>
+                  <q-item-section style="text-align: center">
+                    Cube
                   </q-item-section>
                 </q-item>
               </q-list>
@@ -87,6 +92,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import "../../css/app.scss";
 
+  .toolbar{
+    background-color: $app-toolbar-bg;
+  }
 </style>

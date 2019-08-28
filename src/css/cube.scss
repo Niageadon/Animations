@@ -1,0 +1,107 @@
+@import "./app.scss";
+
+$container-bc: $app-toolbar-bg;
+
+$cube-width: 200px;
+$cube-height: 200px;
+$cube-margin: 40px;
+
+$cube-color-front: #ce84e1;
+$cube-color-top: #FFA040;
+$cube-color-back: #FFA040;
+$cube-color-bot: #FFA040;
+$cube-color-back: #FFA040;
+$cube-color-left: #FFA040;
+$cube-color-right: #FFA040;
+$cube-text-pt: 15px;
+$cube-translateZ: $cube-width/2;
+
+/*
+                      ____
+                     /   / top
+                 ___/___/___
+           left/   /   /   / right
+              /___/___/___/         <<--front
+                 /   / bot
+                /___/
+               /   / back
+              /___/  
+*/
+%cube-body {
+    width: $cube-width;
+    height: $cube-height;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    margin: $cube-margin;
+    margin-top: 0;
+}
+%cube-top {
+    padding-top: $cube-text-pt;
+    color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $cube-color-top;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+%cube-front {
+    padding-top: $cube-text-pt;
+    color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $cube-color-front;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+%cube-back {
+    padding-top: $cube-text-pt;
+    color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $cube-color-back;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+%cube-left {
+    padding-top: $cube-text-pt;
+    color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $cube-color-left;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+%cube-right {
+    padding-top: $cube-text-pt;
+    color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $cube-color-right;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+%cube-bot {
+    padding-top: $cube-text-pt;
+    color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $cube-color-bot;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+%container{
+    background-color: $container-bc;
+    color: white;
+}

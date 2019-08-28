@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../style.scss';
+@import '../../../../css/card.scss';
   .front{
     @extend %card-front;
     transition: 1s;
