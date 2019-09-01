@@ -14,24 +14,23 @@
       <q-separator />
 
       <q-tab-panels  v-model="tab" class="content tab" animated>
-        <q-tab-panel style="white-space: pre-wrap" name="HTML">
+        <q-tab-panel class="test" style="white-space: pre-wrap" name="HTML">
           <div class="text-h6"></div>
-          {{uHTML}}
+{{uHTML}}
         </q-tab-panel>
-
         <q-tab-panel style="white-space: pre-wrap" name="CSS">
           <div class="text-h6"></div>
-          {{uCSS}}
+{{uCSS}}
         </q-tab-panel>
 
         <q-tab-panel style="white-space: pre-wrap" name="JS">
           <div class="text-h6"></div>
-          {{uJS}}
+{{uJS}}
         </q-tab-panel>
 
         <q-tab-panel style="white-space: pre-wrap" name="Description">
           <div class="text-h6"></div>
-          {{uDescription}}
+{{uDescription}}
         </q-tab-panel>
       </q-tab-panels>
     </div>
@@ -62,5 +61,8 @@ $tab-content-height: 200px - $tab-height;
   }
   .tab{
     min-height: $tab-content-height;
+  }
+  .test{
+    text-indent: 200px;
   }
 </style>

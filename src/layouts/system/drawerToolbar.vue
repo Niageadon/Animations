@@ -39,18 +39,31 @@
                 </q-item>
               </q-list>
             </q-expansion-item>
+            <!---------------------------smooth display------------------------------>
+          <q-expansion-item
+              :header-inset-level="1"
+              expand-separator
+              label="Smooth display"
+              caption="some boba"
+            >
+              <q-list dense >
+                <!--input links here-->
+                <q-item to="/CSS/logo-animations" clickable v-ripple>
+                  <q-item-section style="text-align: center">
+                    Text
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-expansion-item>
           </q-expansion-item>
-
           <!----------------------------------------js---------------------------------------------------------------->
           <q-expansion-item
           expand-separator
           icon="brush"
           label="JS animations"
           caption="some boba"
-        >
-
-        </q-expansion-item>
-
+          >
+          </q-expansion-item>
           <!------------------------------------------css properties----------------------------------------------------->
           <q-expansion-item
             expand-separator
