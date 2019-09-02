@@ -39,7 +39,15 @@
                 </q-item>
               </q-list>
             </q-expansion-item>
-            <!---------------------------smooth display------------------------------>
+          </q-expansion-item>
+          <!----------------------------------------SVG-Animation----------------------------------------------------->
+          <q-expansion-item
+          expand-separator
+          icon="brush"
+          label="SVG animations"
+          caption="some boba"
+          >
+           <!---------------------------smooth display------------------------------>
           <q-expansion-item
               :header-inset-level="1"
               expand-separator
@@ -56,6 +64,7 @@
               </q-list>
             </q-expansion-item>
           </q-expansion-item>
+
           <!----------------------------------------js---------------------------------------------------------------->
           <q-expansion-item
           expand-separator
@@ -64,6 +73,7 @@
           caption="some boba"
           >
           </q-expansion-item>
+
           <!------------------------------------------css properties----------------------------------------------------->
           <q-expansion-item
             expand-separator
