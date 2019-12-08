@@ -31,18 +31,18 @@
 <script>
 import tabs from '../../../../layouts/CodeTabs'
 export default {
-  name: 'ex1',
-  components: {
-    tabs
-  },
-  data () {
-    return {
-      uHTML: '<div class="row justify-center">\n   <div class="cube col-md-2 col-xs-12 q-mx-lg">\n   <div class="top">top</div>\n   <div class="front">front</div>\n   <div class="bot">bot</div>\n   <div class="back">back</div>\n   <div class="left">left</div>\n   <div class="right">right</div>\n</div>',
-      uCSS: "@import '../../../../css/cube.scss';\n  .top{\n    @extend %cube-top;\n    transform:  rotateX(90deg) translateZ($cube-translateZ);\n  }\n  .front{\n    @extend %cube-front;\n  }\n  .bot{\n    @extend %cube-bot;\n    transform:  rotateX(-90deg) translateZ($cube-translateZ);\n  }\n  .back{\n    @extend %cube-back;\n    transform:  rotateX(-180deg) translateZ($cube-translateZ);\n  }\n  .left{\n    @extend %cube-left;\n    transform:  rotateY(-90deg) translateZ($cube-translateZ);\n  }\n  .right{\n    @extend %cube-right;\n    transform:  rotateY(90deg) translateZ($cube-translateZ);\n  }\n  .cube{\n    @extend %cube-body;\n    &:hover{\n    transform: rotateX(-90deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }",
-      uJS: '',
-      uDescription: ''
+    name: 'ex1',
+    components: {
+        tabs
+    },
+    data () {
+        return {
+            uHTML: '<div class="row justify-center">\n   <div class="cube col-md-2 col-xs-12 q-mx-lg">\n   <div class="top">top</div>\n   <div class="front">front</div>\n   <div class="bot">bot</div>\n   <div class="back">back</div>\n   <div class="left">left</div>\n   <div class="right">right</div>\n</div>',
+            uCSS: "@import '../../../../css/cube.scss';\n  .top{\n    @extend %cube-top;\n    transform:  rotateX(90deg) translateZ($cube-translateZ);\n  }\n  .front{\n    @extend %cube-front;\n  }\n  .bot{\n    @extend %cube-bot;\n    transform:  rotateX(-90deg) translateZ($cube-translateZ);\n  }\n  .back{\n    @extend %cube-back;\n    transform:  rotateX(-180deg) translateZ($cube-translateZ);\n  }\n  .left{\n    @extend %cube-left;\n    transform:  rotateY(-90deg) translateZ($cube-translateZ);\n  }\n  .right{\n    @extend %cube-right;\n    transform:  rotateY(90deg) translateZ($cube-translateZ);\n  }\n  .cube{\n    @extend %cube-body;\n    &:hover{\n    transform: rotateX(-90deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }",
+            uJS: '',
+            uDescription: ''
+        }
     }
-  }
 }
 </script>
 

@@ -7,15 +7,15 @@
 <script>
 import ex1 from './example/ex1.vue'
 export default {
-  name: 'index',
-  components: {
-    ex1
-  },
-  data () {
-    return {
-      dd: 'ddssd'
+    name: 'index',
+    components: {
+        ex1
+    },
+    data () {
+        return {
+            dd: 'ddssd'
+        }
     }
-  }
 }
 </script>
 

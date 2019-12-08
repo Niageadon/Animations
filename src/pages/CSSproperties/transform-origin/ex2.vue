@@ -1,73 +1,73 @@
 <template>
-  <div class="row">
-    <div class="card col-2 q-mx-lg">
-      <div class="front">front</div>
-      <div class="back">back</div>
+    <div class="row">
+        <div class="card col-2 q-mx-lg">
+            <div class="front">front</div>
+            <div class="back">back</div>
+        </div>
+        <q-space></q-space>
+        <tabs
+            v-bind:HTML="uHTML"
+            v-bind:CSS="uCSS"
+            v-bind:JS="uJS"
+            v-bind:Description="uDescription"
+            class=" col-9">
+        </tabs>
     </div>
-    <q-space></q-space>
-    <tabs
-      v-bind:HTML="uHTML"
-      v-bind:CSS="uCSS"
-      v-bind:JS="uJS"
-      v-bind:Description="uDescription"
-      class=" col-9">
-    </tabs>
-  </div>
 </template>
 
 <script>
 import tabs from '../../../layouts/CodeTabs'
 export default {
-  name: 'ex1',
-  components: {
-    tabs
-  },
-  data () {
-    return {
-      uHTML: '<div class="card col-2 q-mx-lg">\n' +
-        '      <div class="front">front</div>\n' +
-        '      <div class="back">back</div>\n' +
-        '    </div>',
-      uCSS: '  .front{\n' +
-        '    transform-origin: bottom;\n' +
-        '    height: 100%;\n' +
-        '    width: 100%;\n' +
-        '    position: absolute;\n' +
-        '    background-color: aqua;\n' +
-        '    backface-visibility: hidden;\n' +
-        '    transform: rotateX(0deg);\n' +
-        '    transition: 0.5s;\n' +
-        '    text-align: center;\n' +
-        '  }\n' +
-        '  .back{\n' +
-        '    transform-origin: bottom;\n' +
-        '    height: 100%;\n' +
-        '    width: 100%;\n' +
-        '    position: absolute;\n' +
-        '    background-color: #000000;\n' +
-        '    backface-visibility: hidden;\n' +
-        '    transform: rotateX(90deg);\n' +
-        '    transition: 0.5s;\n' +
-        '    color: #ffffff;\n' +
-        '    text-align: center;\n' +
-        '  }\n' +
-        '  .card{\n' +
-        '    min-width: 25px;\n' +
-        '    min-height: 40px;\n' +
-        '    max-height: 400px;\n' +
-        '    transform-style: preserve-3d;\n' +
-        '    perspective: 700px;\n' +
-        '  }\n' +
-        '  .card:hover .front {\n' +
-        '    transform: rotateX(-90deg);\n' +
-        '  }\n' +
-        '  .card:hover .back {\n' +
-        '    transform: rotateX(0deg);\n' +
-        '  }',
-      uJS: '',
-      uDescription: ''
+    name: 'ex1',
+    components: {
+        tabs
+    },
+    data () {
+        return {
+            uHTML: '<div class="card col-2 q-mx-lg">\n' +
+              '      <div class="front">front</div>\n' +
+              '      <div class="back">back</div>\n' +
+              '    </div>',
+            uCSS: '  .front{\n' +
+              '    transform-origin: bottom;\n' +
+              '    height: 100%;\n' +
+              '    width: 100%;\n' +
+              '    position: absolute;\n' +
+              '    background-color: aqua;\n' +
+              '    backface-visibility: hidden;\n' +
+              '    transform: rotateX(0deg);\n' +
+              '    transition: 0.5s;\n' +
+              '    text-align: center;\n' +
+              '  }\n' +
+              '  .back{\n' +
+              '    transform-origin: bottom;\n' +
+              '    height: 100%;\n' +
+              '    width: 100%;\n' +
+              '    position: absolute;\n' +
+              '    background-color: #000000;\n' +
+              '    backface-visibility: hidden;\n' +
+              '    transform: rotateX(90deg);\n' +
+              '    transition: 0.5s;\n' +
+              '    color: #ffffff;\n' +
+              '    text-align: center;\n' +
+              '  }\n' +
+              '  .card{\n' +
+              '    min-width: 25px;\n' +
+              '    min-height: 40px;\n' +
+              '    max-height: 400px;\n' +
+              '    transform-style: preserve-3d;\n' +
+              '    perspective: 700px;\n' +
+              '  }\n' +
+              '  .card:hover .front {\n' +
+              '    transform: rotateX(-90deg);\n' +
+              '  }\n' +
+              '  .card:hover .back {\n' +
+              '    transform: rotateX(0deg);\n' +
+              '  }',
+            uJS: '',
+            uDescription: ''
+        }
     }
-  }
 }
 </script>
 
