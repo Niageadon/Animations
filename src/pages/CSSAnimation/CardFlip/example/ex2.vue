@@ -56,7 +56,7 @@ export default {
     transform: rotateX(-180deg);
   }
   .card{
-    @extend %card-body;
+    @extend %card;
     &:hover .front{
     transform: rotateX(180deg);
     }

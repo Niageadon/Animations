@@ -58,7 +58,7 @@ export default {
     transform: rotate3d(1, 1, 0, 0.5turn);
   }
   .card{
-    @extend %card-body;
+    @extend %card;
     &:hover .front{
     transform: rotate3d(1, 1, 0, 0.5turn);
     }

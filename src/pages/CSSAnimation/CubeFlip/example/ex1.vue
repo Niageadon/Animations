@@ -72,7 +72,8 @@ export default {
     transform:  rotateY(90deg) translateZ($cube-translateZ);
   }
   .cube{
-    @extend %cube-body;
+    @extend %cube;
+    transform-origin: 50% 50% 0;
     &:hover{
     transform: rotateX(-90deg);
     }

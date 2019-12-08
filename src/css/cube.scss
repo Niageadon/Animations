@@ -4,7 +4,7 @@ $container-bc: $app-toolbar-bg;
 
 $cube-width: 200px;
 $cube-height: 200px;
-$cube-margin: 40px;
+$cube-margin: 0 40px 40px 40px;
 
 $cube-color-front: #ce84e1;
 $cube-color-top: #FFA040;
@@ -25,15 +25,14 @@ $cube-translateZ: $cube-width/2;
                  /   / bot
                 /___/
                /   / back
-              /___/  
+              /___/
 */
-%cube-body {
+%cube {
     width: $cube-width;
     height: $cube-height;
     transform-style: preserve-3d;
-    transition: 0.5s;
+    transition: .3s;
     margin: $cube-margin;
-    margin-top: 0;
 }
 %cube-top {
     padding-top: $cube-text-pt;
@@ -43,8 +42,8 @@ $cube-translateZ: $cube-width/2;
     position: absolute;
     background-color: $cube-color-top;
     backface-visibility: hidden;
-    transition: 0.5s;
     text-align: center;
+    border-radius: 8px;
 }
 %cube-front {
     padding-top: $cube-text-pt;
@@ -54,8 +53,8 @@ $cube-translateZ: $cube-width/2;
     position: absolute;
     background-color: $cube-color-front;
     backface-visibility: hidden;
-    transition: 0.5s;
     text-align: center;
+    border-radius: 8px;
 }
 %cube-back {
     padding-top: $cube-text-pt;
@@ -65,8 +64,8 @@ $cube-translateZ: $cube-width/2;
     position: absolute;
     background-color: $cube-color-back;
     backface-visibility: hidden;
-    transition: 0.5s;
     text-align: center;
+    border-radius: 8px;
 }
 %cube-left {
     padding-top: $cube-text-pt;
@@ -76,8 +75,8 @@ $cube-translateZ: $cube-width/2;
     position: absolute;
     background-color: $cube-color-left;
     backface-visibility: hidden;
-    transition: 0.5s;
     text-align: center;
+    border-radius: 8px;
 }
 %cube-right {
     padding-top: $cube-text-pt;
@@ -87,8 +86,8 @@ $cube-translateZ: $cube-width/2;
     position: absolute;
     background-color: $cube-color-right;
     backface-visibility: hidden;
-    transition: 0.5s;
     text-align: center;
+    border-radius: 8px;
 }
 %cube-bot {
     padding-top: $cube-text-pt;
@@ -98,8 +97,8 @@ $cube-translateZ: $cube-width/2;
     position: absolute;
     background-color: $cube-color-bot;
     backface-visibility: hidden;
-    transition: 0.5s;
     text-align: center;
+    border-radius: 8px;
 }
 %container{
     background-color: $container-bc;
