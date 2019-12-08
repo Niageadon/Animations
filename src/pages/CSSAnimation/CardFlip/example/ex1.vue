@@ -48,23 +48,23 @@ export default {
 
 <style scoped lang="scss">
 @import '../../../../css/card.scss';
-  .front{
-    @extend %card-front;
-  }
-  .back{
-    @extend %card-back;
-    transform: rotateX(180deg);
-  }
-  .card{
-    @extend %card;
-    &:hover .front{
-    transform: rotateX(-180deg);
+    .front{
+        @extend %card-front;
     }
-    &:hover .back{
-    transform: rotateX(0deg);
+    .back{
+        @extend %card-back;
+        transform: rotateX(180deg);
     }
-  }
-  .container{
-    @extend %container;
-  }
+    .card{
+        @extend %card;
+        &:hover .front{
+        transform: rotateX(-180deg);
+        }
+        &:hover .back{
+        transform: rotateX(0deg);
+        }
+    }
+    .container{
+       @extend %container;
+    }
 </style>
