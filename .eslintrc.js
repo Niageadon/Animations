@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-
   parserOptions: {
     parser: 'babel-eslint',
     sourceType: 'module'
@@ -31,7 +30,8 @@ module.exports = {
 
   // add your custom rules here
   rules: {
-    "indent": ["error", 4],
+    "quotes": ["error", "single"],          // каычки
+    "indent": ["error", 4],                 // табуляция
     // allow async-await
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
