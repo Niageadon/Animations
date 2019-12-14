@@ -2,7 +2,7 @@
     <div>
         <q-card  class="q-py-lg container">
             <q-card-actions :align="'center'" class="">
-                <h4 class="q-mt-none q-mb-lg">flip down</h4>
+                <h4 class="q-mt-none q-mb-lg">flip up -> right</h4>
             </q-card-actions>
             <!------------------------------>
             <div class="row justify-center">
@@ -72,12 +72,12 @@ export default {
                 '        @extend %cube;\n' +
                 '        transform-origin: 50% 50% 0;\n' +
                 '        &:hover{\n' +
-                '        transform: rotateX(-90deg);\n' +
+                '        transform: rotateY(-90deg);\n' +
                 '        }\n' +
                 '    }\n' +
                 '    .container{\n' +
                 '        @extend %container;\n' +
-                '    }\n',
+                '    }',
             uJS: '',
             uDescription: ''
         }
@@ -110,11 +110,20 @@ export default {
         @extend %cube-right;
         transform:  rotateY(90deg) translateZ($cube-translateZ);
     }
+    @keyframes blurFadeIn {
+        10% {
+          transform: rotateX(90deg);
+        }
+        20% {
+          transform: rotate3d(0, 1, 0, 90deg)
+        }
+    }
     .cube{
         @extend %cube;
         transform-origin: 50% 50% 0;
         &:hover{
-        transform: rotateX(-90deg);
+        //transform: rotateY(-90deg);
+          animation: 10s blurFadeIn;
         }
     }
     .container{

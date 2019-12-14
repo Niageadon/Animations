@@ -1,24 +1,24 @@
 <template>
     <div>
-      <q-card  class="q-py-lg container">
-        <q-card-actions :align="'center'" class="">
-          <h4 class="q-mt-none q-mb-lg">Flip down</h4>
-        </q-card-actions>
-        <!------------------------------>
-        <div class="row justify-center">
-          <div class="card col-md-2 col-xs-12 q-mx-lg">
-            <div class="front">front</div>
-            <div class="back">back</div>
-          </div>
-          <!------------------------------>
-          <tabs
-            v-bind:HTML="uHTML"
-            v-bind:CSS="uCSS"
-            v-bind:JS="uJS"
-            v-bind:Description="uDescription"
-            class="col-md-9 col-xs-12">
-          </tabs>
-        </div>
+        <q-card  class="q-py-lg container">
+            <q-card-actions :align="'center'" class="">
+                <h4 class="q-mt-none q-mb-lg">Flip down</h4>
+            </q-card-actions>
+            <!------------------------------>
+            <div class="row justify-center">
+                <div class="card col-md-2 col-xs-12 q-mx-lg">
+                    <div class="front">front</div>
+                    <div class="back">back</div>
+                </div>
+                <!------------------------------>
+                <tabs
+                    v-bind:HTML="uHTML"
+                    v-bind:CSS="uCSS"
+                    v-bind:JS="uJS"
+                    v-bind:Description="uDescription"
+                    class="col-md-9 col-xs-12">
+                </tabs>
+            </div>
 
       </q-card>
     </div>
