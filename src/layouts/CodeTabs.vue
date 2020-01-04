@@ -1,37 +1,45 @@
 <template>
-    <div>
+    <div class="tab" :class="{closed: isClosed}">
         <q-tabs
           v-model="tab"
           no-caps
           style="background-color: #ce84e1"
           class="shadow-2 content"
         >
-          <q-tab v-bind:class="{'bg-white':(tab === 'HTML')}" name="HTML" label="HTML" />
-          <q-tab v-bind:class="{'bg-white':(tab === 'CSS')}" name="CSS" label="CSS" />
-          <q-tab v-bind:class="{'bg-white':(tab === 'JS')}" name="JS" label="JS" />
-          <q-tab v-bind:class="{'bg-white':(tab === 'Description')}" name="Description" label="Description" />
+            <q-tab v-bind:class="{'bg-white':(tab === 'HTML')}" name="HTML" label="HTML" />
+            <q-tab v-bind:class="{'bg-white':(tab === 'CSS')}" name="CSS" label="CSS" />
+            <q-tab v-bind:class="{'bg-white':(tab === 'JS')}" name="JS" label="JS" />
+            <q-tab v-bind:class="{'bg-white':(tab === 'Description')}" name="Description" label="Description" />
         </q-tabs>
         <q-separator />
         <!---->
-        <q-tab-panels  v-model="tab" class="content tab" animated>
-            <q-tab-panel class="test" style="white-space: pre-wrap" name="HTML">
-                <div class="text-h6"></div>
-                {{uHTML}}
+        <q-tab-panels  v-model="tab" class="content tab__content" animated>
+            <q-tab-panel class="" style="white-space: pre-wrap" name="HTML">
+                <q-icon @click="openTab" v-if="isClosed" name="menu_open" style="font-size: 2.5em; cursor: pointer"/>
+                <code v-else>
+                    {{uHTML}}
+                </code>
             </q-tab-panel>
             <!---->
             <q-tab-panel style="white-space: pre-wrap" name="CSS">
-                <div class="text-h6"></div>
-                {{uCSS}}
+                <q-icon @click="openTab" v-if="isClosed" name="menu_open" style="font-size: 2.5em; cursor: pointer"/>
+                <code v-else>
+                    {{uCSS}}
+                </code>
             </q-tab-panel>
             <!---->
             <q-tab-panel style="white-space: pre-wrap" name="JS">
-                <div class="text-h6"></div>
-                {{uJS}}
+                <q-icon @click="openTab" v-if="isClosed" name="menu_open" style="font-size: 2.5em; cursor: pointer"/>
+                <code v-else>
+                    {{uJS}}
+                </code>
             </q-tab-panel>
             <!---->
             <q-tab-panel style="white-space: pre-wrap" name="Description">
-                <div class="text-h6"></div>
-                {{uDescription}}
+                <q-icon @click="openTab" v-if="isClosed" name="menu_open" style="font-size: 2.5em; cursor: pointer"/>
+                <code v-else>
+                    {{uDescription}}
+                </code>
             </q-tab-panel>
         </q-tab-panels>
     </div>
@@ -40,14 +48,20 @@
 <script>
 export default {
     name: 'CodeTabs',
-    props: ['HTML', 'CSS', 'JS', 'Description'],
+    props: ['HTML', 'CSS', 'JS', 'Description', 'closed'],
     data () {
         return {
             tab: 'HTML',
-            uHTML: this.HTML || 'empty',
-            uCSS: this.CSS || 'empty',
-            uJS: this.JS || 'empty',
-            uDescription: this.Description || 'empty'
+            uHTML: this.HTML || '\nempty',
+            uCSS: this.CSS || '\nempty',
+            uJS: this.JS || '\nempty',
+            uDescription: this.Description || '\nempty',
+            isClosed: this.closed || false
+        }
+    },
+    methods: {
+        openTab () {
+            this.isClosed = !this.isClosed
         }
     }
 }
@@ -56,13 +70,19 @@ export default {
 <style scoped lang="scss">
 $tab-height: 48px;
 $tab-content-height: 200px - $tab-height;
-  .content{
-    color: black
-  }
-  .tab{
-    min-height: $tab-content-height;
-  }
-  .test{
-    text-indent: 200px;
-  }
+    .tab{
+        &.closed{
+            width: 70px;
+          &:first-child{
+            content: "open"
+          }
+        }
+
+        &__content{
+          color: black;
+          min-height: $tab-content-height;
+
+        }
+    }
+
 </style>
