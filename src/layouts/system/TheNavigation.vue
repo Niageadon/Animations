@@ -20,10 +20,10 @@
                 caption="some boba"
               >
                   <q-expansion-item
-                    :header-inset-level="1"
-                    expand-separator
-                    label="Card flip"
-                    caption="some boba"
+                      :header-inset-level="1"
+                      expand-separator
+                      label="Flip"
+                      caption="some boba"
                   >
                       <q-list dense >
                         <!--input links here-->

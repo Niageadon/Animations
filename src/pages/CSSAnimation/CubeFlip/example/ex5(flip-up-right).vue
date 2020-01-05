@@ -111,10 +111,10 @@ export default {
         transform:  rotateY(90deg) translateZ($cube-translateZ);
     }
     @keyframes blurFadeIn {
-        10% {
+        30% {
           transform: rotateX(90deg);
         }
-        20% {
+        60% {
           transform: rotate3d(0, 1, 0, 90deg)
         }
     }
@@ -123,7 +123,7 @@ export default {
         transform-origin: 50% 50% 0;
         &:hover{
         //transform: rotateY(-90deg);
-          animation: 10s blurFadeIn;
+          animation: 7s blurFadeIn;
         }
     }
     .container{

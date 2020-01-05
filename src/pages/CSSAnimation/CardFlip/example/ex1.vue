@@ -33,12 +33,12 @@ export default {
     },
     data () {
         return {
-            uHTML: '<div>\n' +
-                '         <div class="card">\n' +
-                '             <div class="front">front</div>\n' +
-                '         <div class="back">back</div>\n' +
-                '      </div>',
-            uCSS: '.front{\n    @extend %card-front;\n  }\n  .back{\n    @extend %card-back;\n    transform: rotateX(180deg);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotateX(-180deg);\n    }\n    &:hover .back{\n    transform: rotateX(0deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
+            uHTML: '\n<div>\n' +
+                '    <div class="card">\n' +
+                '        <div class="front">front</div>\n' +
+                '    <div class="back">back</div>\n' +
+                '</div>',
+            uCSS: '\n  .front{\n    @extend %card-front;\n  }\n  .back{\n    @extend %card-back;\n    transform: rotateX(180deg);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotateX(-180deg);\n    }\n    &:hover .back{\n    transform: rotateX(0deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
             uJS: '',
             uDescription: ''
         }
