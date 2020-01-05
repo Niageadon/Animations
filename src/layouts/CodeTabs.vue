@@ -97,7 +97,6 @@ export default {
                 this.checkFull(arr)
                 this.show.isFull.forEach((el, key) => {
                     if (el) {
-                        console.log(el, key)
                         arr[key] = arr[key] + '...'
                     }
                 })

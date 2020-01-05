@@ -36,14 +36,14 @@ export default {
     },
     data () {
         return {
-            uHTML: '\n                <div class="cube col-md-2 col-xs-12 q-mx-lg">\n' +
-                '                    <div class="top">top</div>\n' +
-                '                    <div class="front">front</div>\n' +
-                '                    <div class="bot">bot</div>\n' +
-                '                    <div class="back">back</div>\n' +
-                '                    <div class="left">left</div>\n' +
-                '                    <div class="right">right</div>\n' +
-                '                </div>',
+            uHTML: '\n<div class="cube col-md-2 col-xs-12 q-mx-lg">\n' +
+                '    <div class="top">top</div>\n' +
+                '    <div class="front">front</div>\n' +
+                '    <div class="bot">bot</div>\n' +
+                '    <div class="back">back</div>\n' +
+                '    <div class="left">left</div>\n' +
+                '    <div class="right">right</div>\n' +
+                '</div>',
             uCSS: '\n@import \'../../../../css/cube.scss\';\n' +
                 '    .top{\n' +
                 '        @extend %cube-top;\n' +

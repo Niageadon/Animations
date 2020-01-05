@@ -36,14 +36,14 @@ export default {
     },
     data () {
         return {
-            uHTML: '\n                <div class="cube col-md-2 col-xs-12 q-mx-lg">\n' +
-                '                    <div class="top">top</div>\n' +
-                '                    <div class="front">front</div>\n' +
-                '                    <div class="bot">bot</div>\n' +
-                '                    <div class="back">back</div>\n' +
-                '                    <div class="left">left</div>\n' +
-                '                    <div class="right">right</div>\n' +
-                '                </div>',
+            uHTML: '\n<div class="cube col-md-2 col-xs-12 q-mx-lg">\n' +
+                '    <div class="top">top</div>\n' +
+                '    <div class="front">front</div>\n' +
+                '    <div class="bot">bot</div>\n' +
+                '    <div class="back">back</div>\n' +
+                '    <div class="left">left</div>\n' +
+                '    <div class="right">right</div>\n' +
+                '</div>',
             uCSS: '\n@import \'../../../../css/cube.scss\';\n' +
                 '    .top{\n' +
                 '        @extend %cube-top;\n' +
@@ -68,11 +68,20 @@ export default {
                 '        @extend %cube-right;\n' +
                 '        transform:  rotateY(90deg) translateZ($cube-translateZ);\n' +
                 '    }\n' +
+                '    @keyframes blurFadeIn {\n' +
+                '        30% {\n' +
+                '          transform: rotateX(90deg);\n' +
+                '        }\n' +
+                '        60% {\n' +
+                '          transform: rotateX(90deg) rotateZ(90deg);\n' +
+                '        }\n' +
+                '    }\n' +
                 '    .cube{\n' +
                 '        @extend %cube;\n' +
                 '        transform-origin: 50% 50% 0;\n' +
                 '        &:hover{\n' +
-                '        transform: rotateY(-90deg);\n' +
+                '        //transform: rotateY(-90deg);\n' +
+                '          animation: 2s blurFadeIn;\n' +
                 '        }\n' +
                 '    }\n' +
                 '    .container{\n' +
@@ -115,7 +124,7 @@ export default {
           transform: rotateX(90deg);
         }
         60% {
-          transform: rotate3d(0, 1, 0, 90deg)
+          transform: rotateX(90deg) rotateZ(90deg);
         }
     }
     .cube{
@@ -123,7 +132,7 @@ export default {
         transform-origin: 50% 50% 0;
         &:hover{
         //transform: rotateY(-90deg);
-          animation: 7s blurFadeIn;
+          animation: 2s blurFadeIn;
         }
     }
     .container{
