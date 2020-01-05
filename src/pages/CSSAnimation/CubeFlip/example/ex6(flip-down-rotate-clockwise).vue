@@ -2,7 +2,7 @@
     <div>
         <q-card  class="q-py-lg container">
             <q-card-actions :align="'center'" class="">
-                <h4 class="q-mt-none q-mb-lg">flip down -> left</h4>
+                <h4 class="q-mt-none q-mb-lg">flip down -> rotate clockwise</h4>
             </q-card-actions>
             <!------------------------------>
             <div class="row justify-center">
@@ -73,7 +73,7 @@ export default {
                 '          transform: rotateX(-90deg);\n' +
                 '        }\n' +
                 '        60% {\n' +
-                '          transform: rotateX(-90deg) rotateZ(-90deg);\n' +
+                '          transform: rotateX(-90deg) rotateY(-90deg);\n' +
                 '        }\n' +
                 '    }\n' +
                 '    .cube{\n' +
@@ -124,7 +124,7 @@ export default {
           transform: rotateX(-90deg);
         }
         60% {
-          transform: rotateX(-90deg) rotateZ(-90deg);
+          transform: rotateX(-90deg) rotateY(-90deg);
         }
     }
     .cube{
