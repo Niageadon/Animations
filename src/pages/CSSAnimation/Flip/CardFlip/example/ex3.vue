@@ -2,7 +2,7 @@
     <div>
       <q-card  class="q-py-lg container">
         <q-card-actions :align="'center'" class="">
-          <h4 class="q-mt-none q-mb-lg">Flip up</h4>
+          <h4 class="q-mt-none q-mb-lg">Flip right</h4>
         </q-card-actions>
         <!------------------------------>
         <div class="row justify-center">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import tabs from '../../../../layouts/CodeTabs'
+import tabs from '../../../../../layouts/CodeTabs'
 export default {
     name: 'ex1',
     components: {
@@ -38,7 +38,7 @@ export default {
                 '        <div class="front">front</div>\n' +
                 '    <div class="back">back</div>\n' +
                 '</div>',
-            uCSS: '\n  .front{\n    @extend %card-front;\n  }\n  .back{\n    @extend %card-back;\n    transform: rotateX(-180deg);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotateX(180deg);\n    }\n    &:hover .back{\n    transform: rotateX(0deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
+            uCSS: '\n  .front{\n    @extend %card-front;\n  }\n  .back{\n    @extend %card-back;\n    transform: rotateY(-180deg);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotateY(180deg);\n    }\n    &:hover .back{\n    transform: rotateY(0deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
             uJS: '',
             uDescription: ''
         }
@@ -47,24 +47,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../../css/card.scss';
-    .front{
-        @extend %card-front;
+@import '../../../../../css/card';
+  .front{
+    @extend %card-front;
+  }
+  .back{
+    @extend %card-back;
+    transform: rotateY(-180deg);
+  }
+  .card{
+    @extend %card;
+    &:hover .front{
+    transform: rotateY(180deg);
     }
-    .back{
-        @extend %card-back;
-        transform: rotateX(-180deg);
+    &:hover .back{
+    transform: rotateY(0deg);
     }
-    .card{
-        @extend %card;
-        &:hover .front{
-        transform: rotateX(180deg);
-        }
-        &:hover .back{
-        transform: rotateX(0deg);
-        }
-    }
-    .container{
-        @extend %container;
-    }
+  }
+  .container{
+    @extend %container;
+  }
 </style>

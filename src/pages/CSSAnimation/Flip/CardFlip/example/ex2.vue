@@ -2,7 +2,7 @@
     <div>
       <q-card  class="q-py-lg container">
         <q-card-actions :align="'center'" class="">
-          <h4 class="q-mt-none q-mb-lg">Diagonal flip left</h4>
+          <h4 class="q-mt-none q-mb-lg">Flip up</h4>
         </q-card-actions>
         <!------------------------------>
         <div class="row justify-center">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import tabs from '../../../../layouts/CodeTabs'
+import tabs from '../../../../../layouts/CodeTabs'
 export default {
     name: 'ex1',
     components: {
@@ -38,7 +38,7 @@ export default {
                 '        <div class="front">front</div>\n' +
                 '    <div class="back">back</div>\n' +
                 '</div>',
-            uCSS: '\n  .front{\n    @extend %card-front;\n    transition: 1s;\n  }\n  .back{\n    @extend %card-back;\n    transition: 1s;\n    transform: rotate3d(1, 1, 0, 0.5turn);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotate3d(1, 1, 0, 0.5turn);\n    }\n    &:hover .back{\n    transform: rotate3d(1, 0, 0, 0turn);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
+            uCSS: '\n  .front{\n    @extend %card-front;\n  }\n  .back{\n    @extend %card-back;\n    transform: rotateX(-180deg);\n  }\n  .card{\n    @extend %card-body;\n    &:hover .front{\n    transform: rotateX(180deg);\n    }\n    &:hover .back{\n    transform: rotateX(0deg);\n    }\n  }\n  .container{\n    @extend %container;\n  }',
             uJS: '',
             uDescription: ''
         }
@@ -47,26 +47,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../../css/card.scss';
-  .front{
-    @extend %card-front;
-    transition: 1s;
-  }
-  .back{
-    @extend %card-back;
-    transition: 1s;
-    transform: rotate3d(1, 1, 0, 0.5turn);
-  }
-  .card{
-    @extend %card;
-    &:hover .front{
-    transform: rotate3d(1, 1, 0, 0.5turn);
+@import '../../../../../css/card';
+    .front{
+        @extend %card-front;
     }
-    &:hover .back{
-    transform: rotate3d(1, 0, 0, 0turn);
+    .back{
+        @extend %card-back;
+        transform: rotateX(-180deg);
     }
-  }
-  .container{
-    @extend %container;
-  }
+    .card{
+        @extend %card;
+        &:hover .front{
+        transform: rotateX(180deg);
+        }
+        &:hover .back{
+        transform: rotateX(0deg);
+        }
+    }
+    .container{
+        @extend %container;
+    }
 </style>

@@ -2,7 +2,7 @@
     <div>
         <q-card  class="q-py-lg container">
             <q-card-actions :align="'center'" class="">
-                <h4 class="q-mt-none q-mb-lg">flip down -> rotate clockwise</h4>
+                <h4 class="q-mt-none q-mb-lg">flip right</h4>
             </q-card-actions>
             <!------------------------------>
             <div class="row justify-center">
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import tabs from '../../../../layouts/CodeTabs'
+import tabs from '../../../../../layouts/CodeTabs'
 export default {
     name: 'ex1',
     components: {
@@ -68,20 +68,11 @@ export default {
                 '        @extend %cube-right;\n' +
                 '        transform:  rotateY(90deg) translateZ($cube-translateZ);\n' +
                 '    }\n' +
-                '    @keyframes blurFadeIn {\n' +
-                '        30% {\n' +
-                '          transform: rotateX(-90deg);\n' +
-                '        }\n' +
-                '        60% {\n' +
-                '          transform: rotateX(-90deg) rotateY(-90deg);\n' +
-                '        }\n' +
-                '    }\n' +
                 '    .cube{\n' +
                 '        @extend %cube;\n' +
                 '        transform-origin: 50% 50% 0;\n' +
                 '        &:hover{\n' +
-                '        //transform: rotateY(-90deg);\n' +
-                '          animation: 2s blurFadeIn;\n' +
+                '        transform: rotateY(90deg);\n' +
                 '        }\n' +
                 '    }\n' +
                 '    .container{\n' +
@@ -95,7 +86,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../../css/cube.scss';
+@import '../../../../../css/cube';
     .top{
         @extend %cube-top;
         transform:  rotateX(90deg) translateZ($cube-translateZ);
@@ -119,20 +110,11 @@ export default {
         @extend %cube-right;
         transform:  rotateY(90deg) translateZ($cube-translateZ);
     }
-    @keyframes blurFadeIn {
-        30% {
-          transform: rotateX(-90deg);
-        }
-        60% {
-          transform: rotateX(-90deg) rotateY(-90deg);
-        }
-    }
     .cube{
         @extend %cube;
         transform-origin: 50% 50% 0;
         &:hover{
-        //transform: rotateY(-90deg);
-          animation: 2s blurFadeIn;
+        transform: rotateY(90deg);
         }
     }
     .container{

@@ -2,7 +2,7 @@
     <div>
         <q-card  class="q-py-lg container">
             <q-card-actions :align="'center'" class="">
-                <h4 class="q-mt-none q-mb-lg">flip left</h4>
+                <h4 class="q-mt-none q-mb-lg">flip down</h4>
             </q-card-actions>
             <!------------------------------>
             <div class="row justify-center">
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import tabs from '../../../../layouts/CodeTabs'
+import tabs from '../../../../../layouts/CodeTabs'
 export default {
     name: 'ex1',
     components: {
@@ -72,12 +72,12 @@ export default {
                 '        @extend %cube;\n' +
                 '        transform-origin: 50% 50% 0;\n' +
                 '        &:hover{\n' +
-                '        transform: rotateY(-90deg);\n' +
+                '        transform: rotateX(-90deg);\n' +
                 '        }\n' +
                 '    }\n' +
                 '    .container{\n' +
                 '        @extend %container;\n' +
-                '    }',
+                '    }\n',
             uJS: '',
             uDescription: ''
         }
@@ -86,7 +86,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../../css/cube.scss';
+@import '../../../../../css/cube';
     .top{
         @extend %cube-top;
         transform:  rotateX(90deg) translateZ($cube-translateZ);
@@ -114,7 +114,7 @@ export default {
         @extend %cube;
         transform-origin: 50% 50% 0;
         &:hover{
-        transform: rotateY(-90deg);
+        transform: rotateX(-90deg);
         }
     }
     .container{

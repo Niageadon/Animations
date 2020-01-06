@@ -1,15 +1,15 @@
 @import "./app.scss";
 
-$container-bc: $app-toolbar-bg;
+$container-bc: $dark-purple;
 
 $cube-width: 200px;
 $cube-height: 200px;
 $cube-margin: 0 40px 40px 40px;
 $cube-border-radius: 2px;
 
-$cube-color-front: #ce84e1;
+$cube-color-front: $light-purple;
 $cube-color-top: #ff4863;
-$cube-color-back: #ff8c39;
+$cube-color-back: $orange;
 $cube-color-bot: #fffe46;
 $cube-color-back: #76ff53;
 $cube-color-left: #67ffe4;

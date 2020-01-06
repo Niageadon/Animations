@@ -108,23 +108,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$tab-height: 48px;
-$tab-content-height: 200px - $tab-height;
+    @import "../css/app.scss";
+    $tab-height: 48px;
+    $tab-content-height: 200px - $tab-height;
     .tab{
         &.closed{
             width: 70px;
-          &:first-child{
-            content: "open"
-          }
+            &:first-child{
+                content: "open"
+            }
         }
 
         &__content{
-          color: black;
-          min-height: $tab-content-height;
+            background-color: $dark-purple;
+            color: $orange;
+            min-height: $tab-content-height;
 
         }
         .bg-white{
-            color: #9c27b0
+            color: #ce84e1
         }
     }
 

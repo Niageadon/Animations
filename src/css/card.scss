@@ -1,13 +1,13 @@
 @import "./app.scss";
 
-$container-bc: $app-toolbar-bg;
+$container-bc: $dark-purple;
 
 $card-width: 200px;
 $card-height: 200px;
 $card-margin: 10px;
 
-$card-color-front: #ce84e1;
-$card-color-back: #FFA040;
+$card-color-front: $light-purple;
+$card-color-back: $orange;
 $card-text-pt: 15px;
 
 %card {
