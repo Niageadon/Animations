@@ -1,10 +1,10 @@
 <template>
     <div class="tab" :class="{closed: isClosed}">
         <q-tabs
-          v-model="tab"
-          no-caps
-          style="background-color: #ce84e1"
-          class="shadow-2 content"
+            v-model="tab"
+            no-caps
+            style="background-color: #ce84e1"
+            class="shadow-2 content"
         >
             <q-tab v-bind:class="{'bg-white':(tab === 'HTML')}" name="HTML" label="HTML" />
             <q-tab v-bind:class="{'bg-white':(tab === 'CSS')}" name="CSS" label="CSS" />
